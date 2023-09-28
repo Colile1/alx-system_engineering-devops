@@ -1,1 +1,1 @@
-This is the README file for the 0x01-shell_permissions directory.
+This is a script to switch the current user to the user Betty.
