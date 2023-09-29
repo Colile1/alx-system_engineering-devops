@@ -1,2 +1,2 @@
 #!/bin/bash
-$$current_directory
+$current_directory
