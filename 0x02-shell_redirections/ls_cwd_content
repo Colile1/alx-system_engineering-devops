@@ -1,0 +1,26 @@
+total 32
+drwxr-xr-x 1 colile 197121   0 Oct  3 18:06 .
+drwxr-xr-x 1 colile 197121   0 Oct  3 11:07 ..
+-rw-r--r-- 1 colile 197121   0 Oct  3 18:05 0-hello_world
+-rwxr-xr-x 1 colile 197121  54 Oct  3 18:02 100-empty_casks
+-rwxr-xr-x 1 colile 197121 105 Oct  3 18:03 101-gifs
+-rwxr-xr-x 1 colile 197121 113 Oct  3 18:03 103-the_biggest_fan
+-rwxr-xr-x 1 colile 197121  39 Oct  3 18:00 14-findthatword
+-rwxr-xr-x 1 colile 197121  41 Oct  3 18:01 15-countthatword
+-rwxr-xr-x 1 colile 197121  44 Oct  3 18:01 16-whatsnext
+-rwxr-xr-x 1 colile 197121  41 Oct  3 18:01 17-hidethisword
+-rwxr-xr-x 1 colile 197121  50 Oct  3 18:01 18-letteronly
+-rwxr-xr-x 1 colile 197121  36 Oct  3 18:02 19-AZ
+-rwxr-xr-x 1 colile 197121  13 Oct  3 18:02 20-hiago
+-rwxr-xr-x 1 colile 197121  16 Oct  3 18:02 21-reverse
+-rwxr-xr-x 1 colile 197121  47 Oct  3 18:02 22-users_and_homes
+-rwxr-xr-x 1 colile 197121  28 Oct  3 18:05 2-hellofile
+-rwxr-xr-x 1 colile 197121  39 Oct  3 18:05 3-twofiles
+-rwxr-xr-x 1 colile 197121  35 Oct  3 18:05 4-lastlines
+-rwxr-xr-x 1 colile 197121  35 Oct  3 18:05 5-firstlines
+-rwxr-xr-x 1 colile 197121  40 Oct  3 18:06 6-third_line
+-rwxr-xr-x 1 colile 197121  83 Oct  3 18:06 7-file
+-rwxr-xr-x 1 colile 197121  36 Oct  3 18:06 8-cwd_state
+-rw-r--r-- 1 colile 197121   0 Oct  3 18:06 ls_cwd_content
+-rw-r--r-- 1 colile 197121   5 Oct  3 11:08 README.md
+-rw-r--r-- 1 colile 197121   0 Oct  3 11:09 testing
