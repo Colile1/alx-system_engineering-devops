@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # prints the content of the current directory
 # Where only the part of the name after the first dash is displayed
-list=$(ls)
-for i in $list; do
-  echo "$i" | cut -d '-' -f2
+
+for file in *; do
+  if [[ ! -d $file && $file != .* ]]; then
+    name=${file#*-}
+    echo $name
+  fi
 done
