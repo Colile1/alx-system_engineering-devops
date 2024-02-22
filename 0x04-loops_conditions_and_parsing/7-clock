@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 # prints the time for 12 hours and 59 minute
 hour=0
+
 while [ $hour -le 12 ]
 do
-	min=1
-	echo "Hour: $hour"
-	while [ $min -lt 60 ]
-	do
-		echo $min
-		min=$((min + 1))
-	done
-	hour=$((hour + 1))
+ echo "Hour: $hour"
+  minute=1
+  while [ $minute -le 59 ]
+  do
+    echo "$minute"
+    (( minute++ ))
+  done
+  (( hour++ ))
 done
