@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # loops from 1 to 10 and:
-# prints bad luck for the 4th loop iteration
-# prints good luck for the 8th loop iteration
-# Prints 'Best School' for the other iterations
+# prints bad luck for the 4th iteration
+# prints good luck for the 8th iteration
+# prints Best School for the other iterations
 count=1
 while [ $count -le 10 ]
 do
