@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 # prints the content of the current directory
-
-for file in *; do
-  if [[ ! -d $file && $file != .* ]]; then
-    name=${file#*-}
-    echo $name
-  fi
+# only displays the part of the name after the first dash is printed
+for file in *
+do
+	if [ -f "$file" ] && [ "${file:0:1}" != "." ]
+	then
+		echo "${file#*-}"
+	fi
 done
