@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# The code demonstrates handling signals in a Bash script.
+# It starts by defining a terminator() function to clean up before exiting.
+# It writes the PID to a file, then enters an infinite loop printing a message.
+# Inside the loop, it sets up signal handlers for SIGINT, SIGTERM and SIGQUIT.
+# The signal handlers will print custom messages and call terminator().
+
+
+terminator() {
+  rm /var/run/myscript.pid
+  exit
+}
+
+echo "$$" > /var/run/myscript.pid
+
+while true
+do
+  echo "To infinity and beyond"
+  sleep 2
+  trap 'echo "Y U no love me?!"' SIGINT
+  trap 'echo "I hate the kill command" && terminator' SIGTERM
+  trap 'terminator' SIGQUIT
+done

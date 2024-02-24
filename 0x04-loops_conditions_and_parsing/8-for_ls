@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # prints the content of the current directory
-# only displays the part of the name after the first dash is printed
+# only Prints the part of the name after the first dash is printed
 for file in *
 do
 	if [ -f "$file" ] && [ "${file:0:1}" != "." ]
