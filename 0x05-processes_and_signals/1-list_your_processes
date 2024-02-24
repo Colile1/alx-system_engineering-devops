@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
-# Printss a list of currently running processes
-ps aux
+# Print a list of currently running processes
+# Show all processes for all users, including those without a TTY
+# Display in a user-oriented format with process hierarchy
+
+ps -ef --forest
