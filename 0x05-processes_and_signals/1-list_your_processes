@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
-#Prints a list of all running processes for all users
+# !/usr/bin/env bash
+# Prints a list of all running processes for all users
 
 ps -auxf
