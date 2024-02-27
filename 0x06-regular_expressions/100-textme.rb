@@ -1,3 +1,2 @@
 #!/usr/bin/env ruby
-arg = ARGV[0]
-puts arg.match(/School$/) || ""
+puts ARGV[0].scan(/\[from:(.*?)\] \[to:(.*?)\] \[flags:(.*?)\]/).join(",")
