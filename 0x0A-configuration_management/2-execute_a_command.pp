@@ -1,4 +1,5 @@
-#Executes kill process named 'killmenow'
-exec { 'pkill killmenow':
-  path => '/usr/bin:/usr/sbin:/bin'
+# This Puppet manifest kills a process named killmenow using pkill.
+exec { 'killmenow':
+    command => '/usr/bin/pkill killmenow',
+    onlyif  => '/usr/bin/pgrep killmenow',
 }
