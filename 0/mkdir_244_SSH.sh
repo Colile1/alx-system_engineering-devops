@@ -32,6 +32,12 @@ This project focuses on configuring SSH for secure and passwordless authenticati
 - **Description**: Use Puppet to configure the SSH client for passwordless authentication.
 - **File**: [100-puppet_ssh_config.pp](100-puppet_ssh_config.pp)
 
+## Server Information
+- **Name**: 530803-web-01
+- **Username**: ubuntu
+- **IP**: 54.146.71.207
+- **State**: pending
+
 ## Requirements
 - Ubuntu 20.04 LTS
 - SSH client and server
@@ -42,9 +48,9 @@ EOL
 # Create the 0-use_a_private_key script
 cat <<EOL > 0-use_a_private_key
 #!/bin/bash
-# This script connects to a server using a private key.
+# This script connects to the server 530803-web-01 using a private key.
 
-ssh -i ~/.ssh/school ubuntu@8.8.8.8
+ssh -i ~/.ssh/school ubuntu@54.146.71.207
 EOL
 
 # Make the 0-use_a_private_key script executable
@@ -65,7 +71,9 @@ chmod +x 1-create_ssh_key_pair
 cat <<EOL > 2-ssh_config
 # SSH client configuration file
 
-Host *
+Host 530803-web-01
+    HostName 54.146.71.207
+    User ubuntu
     IdentityFile ~/.ssh/school
     PasswordAuthentication no
 EOL

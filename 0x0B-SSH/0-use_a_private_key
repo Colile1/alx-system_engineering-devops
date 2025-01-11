@@ -1,4 +1,4 @@
 #!/bin/bash
-# This script connects to a server using a private key.
+# This script connects to the server 530803-web-01 using a private key.
 
-ssh -i ~/.ssh/school ubuntu@8.8.8.8
+ssh -i ~/.ssh/school ubuntu@54.146.71.207

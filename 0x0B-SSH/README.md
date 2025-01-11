@@ -24,6 +24,12 @@ This project focuses on configuring SSH for secure and passwordless authenticati
 - **Description**: Use Puppet to configure the SSH client for passwordless authentication.
 - **File**: [100-puppet_ssh_config.pp](100-puppet_ssh_config.pp)
 
+## Server Information
+- **Name**: 530803-web-01
+- **Username**: ubuntu
+- **IP**: 54.146.71.207
+- **State**: pending
+
 ## Requirements
 - Ubuntu 20.04 LTS
 - SSH client and server
