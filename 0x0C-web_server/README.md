@@ -1,1 +1,2 @@
-ALX project 0x0C-web_server
+# ALX System Engineering DevOps - Web Server Project
+This project involves setting up and configuring a web server using Nginx.
