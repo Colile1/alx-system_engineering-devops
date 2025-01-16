@@ -10,3 +10,16 @@ echo "The key fingerprint is:"
 ssh-keygen -l -f school
 echo "The key's randomart image is:" 
 ssh-keygen -lf school
+
+
+#!/usr/bin/env bash
+
+# Create an RSA key pair
+ssh-keygen -t rsa -b 4096 -C "betty" -f school -N "betty"
+
+# Check if the school file exists and is an RSA private key
+if [ -f "school" ]; then
+    echo "school: OpenSSH private key"
+else
+    echo "school: cannot open 'school' (No such file or directory)"
+fi
