@@ -1,10 +1,3 @@
 #!/bin/bash
-
-url=$1
-
-response=$(curl -s "$url")
-status_code=$(echo "$response" | head -n 1 | cut -d' ' -f2)
-
-if [ "$status_code" -eq 200 ]; then
-  echo "${response##*$'\r'}"
-fi
+# This script sends a GET request and displays the body only if the status code is 200.
+curl -s -o /dev/null -w "%{http_code}" "$1" | grep -q "200" && curl -s "$1"

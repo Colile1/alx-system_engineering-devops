@@ -1,5 +1,3 @@
 #!/bin/bash
-
-url=$1
-
-curl -s -H "X-School-User-Id: 98" $url
+# This script sends a GET request with a custom header and displays the body.
+curl -H "X-School-User-Id: 98" -s "$1"
