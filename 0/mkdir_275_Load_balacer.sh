@@ -2,7 +2,7 @@
 # Master script to configure all servers for the load balancer project
 
 # Ask for SSH private key path
-read -p "Enter the path to your SSH private key: " SSH_KEY
+#read -p "Enter the path to your SSH private key: " SSH_KEY
 
 # Define server information
 WEB1_IP="54.146.71.207"
