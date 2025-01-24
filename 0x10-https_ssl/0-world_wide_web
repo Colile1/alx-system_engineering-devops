@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# This script audits DNS records for specified subdomains using `dig` and `awk`.
+
+get_subdomain_info() {
+    local domain="$1"
+    local subdomain="$2"
+    local full_name="${subdomain}.${domain}"
+
+    answer=$(dig +nocmd +noall +answer "$full_name" A)
+    record_type=$(echo "$answer" | awk '{print $4}')
+    destination=$(echo "$answer" | awk '{print $5}')
+
+    echo "The subdomain $subdomain is a $record_type record and points to $destination"
+}
+
+if [ $# -lt 1 ]; then
+    exit 1
+fi
+
+domain="$1"
+subdomain="$2"
+
+if [ -z "$subdomain" ]; then
+    for sub in www lb-01 web-01 web-02; do
+        get_subdomain_info "$domain" "$sub"
+    done
+else
+    get_subdomain_info "$domain" "$subdomain"
+fi
