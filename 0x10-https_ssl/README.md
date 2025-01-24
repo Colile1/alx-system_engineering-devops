@@ -1,6 +1,6 @@
 # HTTPS and SSL Configuration Project
 
-This project involves configuring DNS records, HAproxy for SSL termination, and HTTP to HTTPS redirection.
+This is an project that involves configuring DNS records, HAproxy for SSL termination, and HTTP to HTTPS redirection.
 
 ## Files
 
