@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script connects to the server 530803-web-01 using a private key.
 
-ssh -i ~/.ssh/school ubuntu@54.146.71.207
+ssh -i ~/.ssh/school ubuntu@54.87.172.130
