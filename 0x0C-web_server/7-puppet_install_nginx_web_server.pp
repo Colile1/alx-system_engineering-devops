@@ -1,18 +1,18 @@
 # Puppet manifest to install and configure Nginx with a 301 redirect
 
-# Install Nginx package
+# Installing Nginx package
 package { 'nginx':
   ensure => installed,
 }
 
-# Create index.html with "Hello World!" content
+# Creating index.html with "Hello World!" content
 file { '/var/www/html/index.html':
   content => 'Hello World!',
   mode    => '0644',
   require => Package['nginx'],
 }
 
-# Configure Nginx server block with redirect
+# Configuring Nginx server block with redirect
 file { '/etc/nginx/sites-available/default':
   content => @(END),
     server {
