@@ -17,5 +17,4 @@ sudo sed -i '/^server {/a \
 sudo nginx -t
 
 sudo systemctl reload nginx
-
 echo -e "\nNginx has been configured to redirect /redirect_me to https://www.youtube.com/watch?v=QH2-TGUlwu4 with a 301 Moved Permanently status.\n"
