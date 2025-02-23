@@ -1,15 +1,21 @@
 #!/usr/bin/env bash
 # Configures Nginx to redirect /redirect_me to another page
 
-sudo service nginx start
-sudo ufw allow 'Nginx HTTP'
+sudo apt-get update -y -qq
+sudo apt-get install nginx -y
 
-sudo chown -R "$USER":"$USER" /var/www/html
-sudo chmod -R 755 /var/www
+# Backing up the default Nginx configuration file
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.backup
 
-cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
+# Adding the redirection configuration to the Nginx default server block
+sudo sed -i '/^server {/a \
+    location = /redirect_me { \
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4; \
+    }' /etc/nginx/sites-available/default
 
-echo -e "Hello World!" > /var/www/html/index.nginx-debian.html
+# Testing the Nginx configuration for syntax errors
+sudo nginx -t
 
-sudo sed -i '24i\       rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-sudo service nginx restart
+sudo systemctl reload nginx
+
+echo -e "\nNginx has been configured to redirect /redirect_me to https://www.youtube.com/watch?v=QH2-TGUlwu4 with a 301 Moved Permanently status.\n"
