@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # Fixed the issue with the web server
 
-service apache2 start
-exit
+sudo apt-get update -y
+sudo apt-get install -y apache2
+sudo /etc/init.d/apache2 start
+echo "Hello Holberton" | sudo tee /var/www/html/index.html
+sudo /etc/init.d/apache2 restart
