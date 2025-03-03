@@ -1,7 +1,0 @@
-# SSH client configuration file
-
-Host 530803-web-01
-    HostName 54.146.71.207
-    User ubuntu
-    IdentityFile ~/.ssh/school
-    PasswordAuthentication no

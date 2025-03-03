@@ -1,5 +1,8 @@
-# Fixes WordPress file permissions to resolve 500 Internal Server Error
-exec { 'fix-wordpress':
-  command => 'chown -R www-data:www-data /var/www/html',
-  path    => '/bin/',
+# This Puppet manifest fixes the 500 error on Apache/WordPress
+class fix_wordpress {
+  exec { 'debug-wordpress':
+    command => 'sed -i "s/display_errors = Off/display_errors = On/" /etc/php5/apache2/php.ini && service apache2 restart',
+    path    => ['/bin', '/usr/bin'],
+  }
 }
+include fix_wordpress
