@@ -1,8 +1,10 @@
-# This Puppet manifest fixes the 500 error on Apache/WordPress
+# This Puppet manifest fixes the 500 error on Apache/WordPress by setting correct permissions
 class fix_wordpress {
-  exec { 'debug-wordpress':
-    command => 'sed -i "s/display_errors = Off/display_errors = On/" /etc/php5/apache2/php.ini && service apache2 restart',
-    path    => ['/bin', '/usr/bin'],
+  file { '/var/www/html':
+    ensure  => directory,
+    owner   => 'www-data',
+    group   => 'www-data',
+    recurse => true,
   }
 }
 include fix_wordpress

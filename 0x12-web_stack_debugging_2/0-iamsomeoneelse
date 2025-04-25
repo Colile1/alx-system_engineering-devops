@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 # Runs whoami as the user passed as argument
-sudo -u "$1" whoami
+if id "$1" >/dev/null 2>&1; then
+  su -s /bin/sh -c whoami "$1"
+else
+  exit 1
+fi

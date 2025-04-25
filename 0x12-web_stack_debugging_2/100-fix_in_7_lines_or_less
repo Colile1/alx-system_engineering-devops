@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-# 7 lines or less: run nginx as nginx user on 8080
-sed -i 's/^user .*/user nginx;/' /etc/nginx/nginx.conf
-sed -i 's/80 default_server;/8080 default_server;/g' /etc/nginx/sites-available/default
+# Run nginx as nginx user on 8080 in 7 lines or less
+id nginx 2>/dev/null || useradd -r -s /usr/sbin/nologin nginx
+grep -q '^user nginx' /etc/nginx/nginx.conf || sed -i '1iuser nginx' /etc/nginx/nginx.conf
+sed -i 's/listen 80 default_server/listen 8080 default_server/' /etc/nginx/sites-available/default
+sed -i 's/listen \[::\]:80 default_server/listen [::]:8080 default_server/' /etc/nginx/sites-available/default
+nginx -t
 service nginx restart
