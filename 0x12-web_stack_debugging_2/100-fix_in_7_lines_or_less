@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# Configures Nginx to run as nginx and listen on port 8080 in less than 7 lines.
-sed -i 's/user .*/user nginx;/' /etc/nginx/nginx.conf
-sed -i 's/listen 80 default_server;/listen 8080 default_server;/' /etc/nginx/sites-available/default
-sed -i 's/listen \[::\]:80 default_server;/listen \[::\]:8080 default_server;/' /etc/nginx/sites-available/default
+# 7 lines or less: run nginx as nginx user on 8080
+sed -i 's/^user .*/user nginx;/' /etc/nginx/nginx.conf
+sed -i 's/80 default_server;/8080 default_server;/g' /etc/nginx/sites-available/default
 service nginx restart
